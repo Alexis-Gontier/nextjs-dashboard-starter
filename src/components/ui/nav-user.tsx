@@ -19,9 +19,11 @@ import {
     ChevronsUpDown,
     LogOut,
     Settings,
+    ShieldUser,
     User
 } from "lucide-react"
 import { signOut } from "@/server/auth-action"
+import Link from "next/link"
 
 type NavUserProps = {
     user: {
@@ -29,9 +31,10 @@ type NavUserProps = {
         email?: string | null
         image?: string | null
     }
+    isAdmin?: boolean
 }
 
-export default function NavUser({ user }: NavUserProps) {
+export default function NavUser({ user, isAdmin }: NavUserProps) {
     return (
         <DropdownMenu>
             <DropdownMenuTrigger asChild>
@@ -56,14 +59,35 @@ export default function NavUser({ user }: NavUserProps) {
                 side="top"
                 className="w-56"
             >
-                <DropdownMenuItem>
-                    <User />
-                    Mon profil
+                <DropdownMenuItem
+                    className="cursor-pointer"
+                    asChild
+                >
+                    <Link href="/dashboard/profile">
+                        <User />
+                        Mon profil
+                    </Link>
                 </DropdownMenuItem>
+                {isAdmin && (
+                    <DropdownMenuItem
+                        className="cursor-pointer"
+                        asChild
+                    >
+                        <Link href="/dashboard/admin">
+                            <ShieldUser />
+                            Admin
+                        </Link>
+                    </DropdownMenuItem>
+                )}
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                    <Settings />
-                    Paramètres
+                <DropdownMenuItem
+                    className="cursor-pointer"
+                    asChild
+                >
+                    <Link href="/dashboard/settings">
+                        <Settings />
+                        Paramètres
+                    </Link>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem

@@ -3,7 +3,7 @@ import {
     adminClient,
     usernameClient
 } from "better-auth/client/plugins"
-import { ENV } from "@/lib/env"
+import { ENV } from "@/lib/utils/env"
 
 export const authClient = createAuthClient({
     baseURL: ENV.NEXT_PUBLIC_BASE_URL,
