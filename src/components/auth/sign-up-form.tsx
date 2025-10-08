@@ -21,7 +21,7 @@ import {
   SignUpType,
 } from "@/schemas/auth-schema"
 
-import { signUpWithEmail } from "@/actions/auth-action"
+import { signUpWithEmail } from "@/server/auth-action"
 
 export function SignUpForm() {
 

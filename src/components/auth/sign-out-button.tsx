@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/shadcn-ui/button"
 import { LogOut } from "lucide-react"
-import { signOut } from "@/actions/auth-action"
+import { signOut } from "@/server/auth-action"
 
 export default function SignOutButton() {
 

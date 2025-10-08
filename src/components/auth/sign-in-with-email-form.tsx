@@ -21,7 +21,7 @@ import {
   SignInWithEmailType,
 } from "@/schemas/auth-schema"
 
-import { signInWithEmail } from "@/actions/auth-action"
+import { signInWithEmail } from "@/server/auth-action"
 
 export function SignInForm() {
 

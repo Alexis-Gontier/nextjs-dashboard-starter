@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/shadcn-ui/button"
 import { Github } from "lucide-react"
-import { signInWithGitHub } from "@/actions/auth-action"
+import { signInWithGitHub } from "@/server/auth-action"
 
 export default function SignInWithGitHubButton() {
 

@@ -21,7 +21,7 @@ import {
   SignInWithUsernameType,
 } from "@/schemas/auth-schema"
 
-import { signInWithUsername } from "@/actions/auth-action"
+import { signInWithUsername } from "@/server/auth-action"
 
 export function SignInForm() {
 
